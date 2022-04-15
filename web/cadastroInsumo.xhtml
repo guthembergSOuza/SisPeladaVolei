@@ -19,17 +19,17 @@
                 <p:panelGrid columns="3">
 
                     <h:outputText value="Nome:"/>
-                    <p:inputText id="txtNome" value="#{insumoController.novoInsumo.nome}"
+                    <p:inputText id="txtNome" value="#{insumoController.cadastro.nome}"
                                  required="true" requiredMessage="O Nome é obrigatório"/>
                     <p:message for="txtNome"/>
 
                     <h:outputText value="Descrição:"/>
-                    <p:inputText id="txtDescricao" value="#{insumoController.novoInsumo.descricao}"
+                    <p:inputText id="txtDescricao" value="#{insumoController.cadastro.descricao}"
                                  required="true" requiredMessage="A descrição é obrigatória"/>
                     <p:message for="txtDescricao"/>
                     
                     <h:outputText value="Valor Unitário:"/>
-                    <p:inputText id="valorUnitario" value="#{insumoController.novoInsumo.valorUnitario}"
+                    <p:inputText id="valorUnitario" value="#{insumoController.cadastro.valorUnitario}"
                                  required="true" requiredMessage="O Valor Unitário é obrigatorio"/>
                     <p:message for="valorUnitario"/>
 

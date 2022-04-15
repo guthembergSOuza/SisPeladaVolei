@@ -16,7 +16,7 @@
             
             <p:dataTable id="tblInsumos" var="item" value="#{insumoController.readAll()}" 
                          paginator="true" rows="10" selectionMode="single"
-                         selection="#{insumoController.editInsumo}"
+                         selection="#{insumoController.selecionado}"
                          rowKey="#{item.id}">
                 
                 <p:column headerText="Id" >

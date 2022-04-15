@@ -17,17 +17,17 @@ import javax.faces.context.FacesContext;
 @SessionScoped
 public class InsumoController implements Serializable {
     
-    private Insumo novoInsumo;
+    private Insumo cadastro;
     private Insumo selecionado;
     
     public InsumoController(){
-        this.novoInsumo= new Insumo();
+        this.cadastro= new Insumo();
     }
     
     public String inserir(){
         
         
-        if(this.novoInsumo.getNome().isEmpty()){
+        if(this.cadastro.getNome().isEmpty()){
             FacesContext.getCurrentInstance().
                     addMessage("formCadInsumo:txtNome", 
                             new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Nome inválido"));
@@ -35,7 +35,7 @@ public class InsumoController implements Serializable {
             return null;
         }
         
-        if(Double.compare(this.novoInsumo.getValorUnitario(), 0) < 0){
+        if(Double.compare(this.cadastro.getValorUnitario(), 0) < 0){
             FacesContext.getCurrentInstance().
                     addMessage("formCadInsumo:valorUnitario", 
                             new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Valor Unitário inválido"));
@@ -44,8 +44,8 @@ public class InsumoController implements Serializable {
         }
         
         
-        ManagerDao.getCurrentInstance().insert(this.novoInsumo);
-        this.novoInsumo = new Insumo();
+        ManagerDao.getCurrentInstance().insert(this.cadastro);
+        this.cadastro = new Insumo();
         
         FacesContext.getCurrentInstance().addMessage(null, 
                 new FacesMessage(FacesMessage.SEVERITY_INFO,"Sucesso!","Insumo Cadastrado"));
@@ -80,11 +80,11 @@ public class InsumoController implements Serializable {
     }
 
     public Insumo getCadastro() {
-        return novoInsumo;
+        return cadastro;
     }
 
     public void setCadastro(Insumo cadastro) {
-        this.novoInsumo = cadastro;
+        this.cadastro = cadastro;
     }
 
     public Insumo getSelecionado() {
